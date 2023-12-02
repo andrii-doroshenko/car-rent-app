@@ -1,0 +1,40 @@
+"use client";
+
+import Image from "next/image";
+import CustomButtom from "./CustomButtom";
+import { CustomButtonProps } from "@/types";
+
+export const Hero = () => {
+  const handleScroll = () => {
+    console.log("pushed");
+  };
+
+  return (
+    <div className="hero">
+      <div className="flex-1 pt-36 padding-x">
+        <h1 className="hero__title">
+          Find, book, or rent a car - quickly and easily!
+        </h1>
+
+        <p className="hero__subtitle">
+          Streamline your car rental experience with our effortiess booking
+          process.
+        </p>
+
+        <CustomButtom
+          title="Explore Cars"
+          containerStyles="bg-primary-blue text-white rounded-full mt-10"
+          handleClick={handleScroll}
+        />
+      </div>
+      <div className="hero__image-container">
+        <div className="hero__image">
+          <Image src="/hero.png" fill alt="hero" className="object-contain" />
+          <div className="hero__image-overlay" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Hero;
