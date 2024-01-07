@@ -6,7 +6,7 @@ import Image from "next/image";
 import { CarProps } from "@/types";
 import { CarDetails, CustomButtom } from ".";
 
-import { calculateCarRent } from "@/utils";
+import { calculateCarRent, generateCarImageUrl } from "@/utils";
 
 interface CarCardProps {
   car: CarProps;
@@ -33,9 +33,10 @@ const CarCard = ({ car }: CarCardProps) => {
 
       <div className="relative w-full h-40 my-3">
         <Image
-          src="/hero.png"
+          src={generateCarImageUrl(car)}
           alt="car model"
           fill
+          sizes="500px"
           priority
           className="object-contain"
         />
@@ -61,7 +62,7 @@ const CarCard = ({ car }: CarCardProps) => {
           </div>
 
           <div className="flex flex-col justify-center items-center gap-2">
-            <Image src="/gas.svg" width={20} height={20} alt="gas" />
+            <Image src="/gas.svg" width={18} height={20} alt="gas" />
             <p className="text-[14px]">{city_mpg} MPG</p>
           </div>
         </div>
