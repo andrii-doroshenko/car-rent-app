@@ -62,6 +62,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                         fill
                         priority
                         className="object-contain"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                     </div>
 
@@ -73,6 +74,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                           fill
                           priority
                           className="object-contain"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                       </div>
                       <div className="flex-1 relative w-full h-24 bg-primaryblue-100 rounded-lg">
@@ -82,6 +84,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                           fill
                           priority
                           className="object-contain"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                       </div>
                       <div className="flex-1 relative w-full h-24 bg-primaryblue-100 rounded-lg">
@@ -91,6 +94,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                           fill
                           priority
                           className="object-contain"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                       </div>
                     </div>
