@@ -34,6 +34,8 @@ const SearchBar = () => {
   const updateSearchParams = (manufacturer: string, model: string) => {
     const searchParams = new URLSearchParams(window.location.search);
 
+    searchParams.set("limit", "10");
+
     if (model) {
       searchParams.set("model", model);
     } else {

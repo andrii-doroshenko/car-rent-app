@@ -1,10 +1,19 @@
-import Image from "next/image";
-
-import { Hero, SearchBar, CustomFilter, CarCard } from "@/components";
+import {
+  Hero,
+  SearchBar,
+  CustomFilter,
+  CarCard,
+  ShowMoreBtn,
+} from "@/components";
 import { fetchCars } from "@/utils";
 import { fuels, yearsOfProduction } from "@/constants";
+import { FilterProps } from "@/types";
 
-export default async function Home({ searchParams }) {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: FilterProps;
+}) {
   const allCars = await fetchCars({
     manufacturer: searchParams.manufacturer || "",
     fuel: searchParams.fuel || "",
@@ -41,6 +50,11 @@ export default async function Home({ searchParams }) {
                 <CarCard key={`car-${index}`} car={car} />
               ))}
             </div>
+
+            <ShowMoreBtn
+              pageNumber={(searchParams.limit || 10) / 10}
+              isNext={(searchParams.limit || 10) > allCars.length}
+            />
           </section>
         ) : (
           <div className="home__error-container">
