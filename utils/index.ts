@@ -1,13 +1,19 @@
 import { FilterProps, CarProps } from "@/types";
+const { API_KEY, BASE_URL, RAPIDAPI_HOST } = process.env;
 
 export const fetchCars = async (filters: FilterProps) => {
   const { manufacturer, year, model, fuel, limit } = filters;
-  const url = `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`;
+  const url = `${BASE_URL}/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`;
 
-  const headers = {
-    "X-RapidAPI-Key": "4a328f98a1msh102193c0fc7270bp19aa3fjsn0272c33ad63c",
-    "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
-  };
+  const headers: Record<string, string> = {};
+
+  if (API_KEY) {
+    headers["X-RapidAPI-Key"] = API_KEY;
+  }
+
+  if (RAPIDAPI_HOST) {
+    headers["X-RapidAPI-Host"] = RAPIDAPI_HOST;
+  }
 
   const response = await fetch(url, { headers });
 
