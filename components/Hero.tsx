@@ -1,12 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import CustomButtom from "./CustomButtom";
-import { CustomButtonProps } from "@/types";
+import { CustomButtom } from ".";
 
-export const Hero = () => {
+const Hero = () => {
   const handleScroll = () => {
-    console.log("pushed");
+    const nextSection = document.getElementById("discover");
+
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -27,14 +30,16 @@ export const Hero = () => {
           handleClick={handleScroll}
         />
       </div>
+
       <div className="hero__image-container">
         <div className="hero__image">
           <Image
             src="/hero.png"
             fill
             alt="hero"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes="(max-width: 1279px) 80vw, 50vw"
             className="object-contain"
+            priority
           />
         </div>
         <div className="hero__image-overlay" />
