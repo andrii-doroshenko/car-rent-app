@@ -26,7 +26,7 @@ export default async function Home({
 
   return (
     <main className="overflow-hidden">
-      <div className="mt-12 padding-x padding-y max-width " id="discover">
+      <div className="padding-x padding-y max-width mt-12 " id="discover">
         <Hero />
 
         <div className="home__text-container">
@@ -58,7 +58,7 @@ export default async function Home({
           </section>
         ) : (
           <div className="home__error-container">
-            <h2 className="text-black text-xl font-bold">Opps, no results !</h2>
+            <h2 className="text-xl font-bold text-black">Opps, no results !</h2>
             <p>{allCars?.message}</p>
           </div>
         )}

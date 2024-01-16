@@ -25,13 +25,13 @@ const CarCard = ({ car }: CarCardProps) => {
         </h2>
       </div>
 
-      <p className="flex mt-6 text-[32px]">
+      <p className="mt-6 flex text-[32px]">
         <span className="self-start text-[14px] font-semibold">$</span>
         {calculateCarRent(city_mpg, year)}
         <span className="self-end text-[14px] font-medium">/day</span>
       </p>
 
-      <div className="relative w-full h-40 my-3">
+      <div className="relative my-3 h-40 w-full">
         <Image
           src={generateCarImageUrl(car)}
           alt="car model"
@@ -42,9 +42,9 @@ const CarCard = ({ car }: CarCardProps) => {
         />
       </div>
 
-      <div className="relative flex w-full mt-2">
-        <div className="flex group-hover:invisible w-full justify-between text-gray">
-          <div className="flex flex-col justify-center items-center gap-2">
+      <div className="relative mt-2 flex w-full">
+        <div className="text-gray flex w-full justify-between group-hover:invisible">
+          <div className="flex flex-col items-center justify-center gap-2">
             <Image
               src="/steering-wheel.svg"
               width={20}
@@ -56,12 +56,12 @@ const CarCard = ({ car }: CarCardProps) => {
             </p>
           </div>
 
-          <div className="flex flex-col justify-center items-center gap-2">
+          <div className="flex flex-col items-center justify-center gap-2">
             <Image src="/tire.svg" width={20} height={20} alt="tire" />
             <p className="text-[14px]">{drive.toLocaleUpperCase()}</p>
           </div>
 
-          <div className="flex flex-col justify-center items-center gap-2">
+          <div className="flex flex-col items-center justify-center gap-2">
             <Image src="/gas.svg" width={18} height={20} alt="gas" />
             <p className="text-[14px]">{city_mpg} MPG</p>
           </div>

@@ -17,7 +17,7 @@ function ShowMoreBtn({ pageNumber, isNext }: ShowMoreBtnProps) {
   };
 
   return (
-    <div className="w-full flex-center gap-5 mt-10">
+    <div className="flex-center mt-10 w-full gap-5">
       {!isNext && (
         <CustomButtom
           title="Show More"
